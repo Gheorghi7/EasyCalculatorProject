@@ -3,14 +3,12 @@ package org.application.calculator.dao;
 import org.application.calculator.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.awt.*;
 
 
 @Service
 public class ConnectionToDB {
     private static final String MESSAGE_FOR_USER = "User with this username already exists";
-    private static final String MESSAGE_PROBLEMS_WITH_LOG_IN = "This username or password is incorrect";
     private static final String MESSAGE_FOR_USER_DELETE_VERSION = "User with this ID is already deleted";
     @Autowired
     private final UserDAO userDao;
@@ -21,7 +19,7 @@ public class ConnectionToDB {
     }
 
     public void createUser(String firstName, String lastName,
-                           String username, String password) {
+                           String password, String username) {
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);
@@ -65,6 +63,5 @@ public class ConnectionToDB {
         }
         return true;
     }
-
 
 }

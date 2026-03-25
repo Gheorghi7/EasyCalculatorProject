@@ -15,10 +15,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @Column(name="firstname")
     private String firstName;
+    @Column(name="lastname")
     private String lastName;
+    @Column(name="username")
     private String username;
+    @Column(name="password_hash")
     private String password;
 
     @Override

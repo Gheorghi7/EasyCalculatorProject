@@ -1,4 +1,5 @@
 package org.application.calculator.dto;
 
-public class UserDeleteDTO {
-}
+import org.application.calculator.models.User;
+
+public record UserDeleteDTO(int id, String username) {}
