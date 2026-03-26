@@ -18,16 +18,11 @@ public class ConnectionToDB {
         this.userDao = userDao;
     }
 
-    public void createUser(String firstName, String lastName,
-                           String password, String username) {
-        User user = new User();
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setUsername(username);
-        user.setPassword(password);
+    public void createUser(User user) {
 
-        if (checkExistUser(username)) {
+        if (checkExistUser(user.getUsername())) {
             userDao.save(user);
+            System.out.println("user Created successful");
         } else {
             System.out.println(MESSAGE_FOR_USER);
         }

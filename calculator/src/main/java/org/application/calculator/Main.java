@@ -1,5 +1,6 @@
 package org.application.calculator;
 
+import org.application.calculator.controller.UserController;
 import org.application.calculator.dao.ConnectionToDB;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,8 +20,8 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... args)  {
-        connectionToDB.createUser("Richard", "Perelman",
-                "password1222", "userRichard");
-        System.out.println("User created successfully");
+        UserController  userController = new UserController();
+        userController.initial();
+
     }
 }
